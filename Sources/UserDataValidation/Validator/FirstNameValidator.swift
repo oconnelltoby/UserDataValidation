@@ -6,9 +6,9 @@ public struct FirstNameValidator {
         case tooShort
     }
 
-    var nameLength: ClosedRange<Int>
+    var nameLength: ClosedRange<UInt>
 
-    public init(nameLength: ClosedRange<Int>) {
+    public init(nameLength: ClosedRange<UInt>) {
         self.nameLength = nameLength
     }
 
