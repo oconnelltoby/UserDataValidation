@@ -1,5 +1,3 @@
-import Foundation
-
 public struct FirstNameValidator {
     public enum FirstNameError: Error {
         case tooLong
