@@ -6,7 +6,7 @@ final class EmailAddressValidatorTests: XCTestCase {
     var validator: EmailAddressValidator!
 
     override func setUpWithError() throws {
-        validator = try EmailAddressValidator(emailAddressLength: 1...50)
+        validator = EmailAddressValidator(emailAddressLength: 1...50)
     }
     
     func testTooLongEmailAddress() {

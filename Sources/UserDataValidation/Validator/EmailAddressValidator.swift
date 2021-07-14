@@ -1,7 +1,7 @@
 import Foundation
 
 public struct EmailAddressValidator {
-    private var dataDetector: NSDataDetector
+    private let dataDetector: NSDataDetector = .link
     
     public enum EmailAddressError: Error {
         case tooLong
@@ -11,10 +11,8 @@ public struct EmailAddressValidator {
 
     public var emailAddressLength: ClosedRange<UInt>
 
-    public init(emailAddressLength: ClosedRange<UInt>) throws {
+    public init(emailAddressLength: ClosedRange<UInt>) {
         self.emailAddressLength = emailAddressLength
-        
-        dataDetector = try NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
     }
 
     public func makeEmailAddress(input: String) -> Result<EmailAddress, EmailAddressError> {
